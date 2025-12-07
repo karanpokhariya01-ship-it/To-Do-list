@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<input type="text" id="input" placeholder="Enter list">
+<button type="button" onclick="addlist()">Add</button>
+<ul id="list">
+</ul>
+<script>
+function addlist()
+{
+let input = document.getElementById("input");
+let text=input.value.trim();
+if(text==="") return;
+let li=document.createElement("li");
+li.textContent=text;
+li.onclick= function()
+{
+this.remove()
+}
+document.getElementById("list").appendChild(li)
+input.value="";
+}
+</script>
+</body>
+</html>
